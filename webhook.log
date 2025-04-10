@@ -1,0 +1,31 @@
+nohup: ignoring input
+[webhook] 2025/04/04 15:27:18 version 2.8.0 starting
+[webhook] 2025/04/04 15:27:18 setting up os signal watcher
+[webhook] 2025/04/04 15:27:18 attempting to load hooks from /home/jaranguren/webhooks/hooks.yaml
+[webhook] 2025/04/04 15:27:18 os signal watcher ready
+[webhook] 2025/04/04 15:27:18 found 1 hook(s) in file
+[webhook] 2025/04/04 15:27:18 	loaded: deploy
+[webhook] 2025/04/04 15:27:18 serving hooks on http://0.0.0.0:9001/hooks/{id}
+[webhook] 2025/04/04 15:27:34 [199213] incoming HTTP GET request from 127.0.0.1:38954
+[webhook] 2025/04/04 15:27:34 [199213] deploy got matched
+[webhook] 2025/04/04 15:27:34 [199213] error parsing body payload due to unsupported content type header: 
+[webhook] 2025/04/04 15:27:34 [199213] deploy hook triggered successfully
+[webhook] 2025/04/04 15:27:34 [199213] 200 | 14 B | 95.166µs | localhost:9001 | GET /hooks/deploy
+[webhook] 2025/04/04 15:27:34 [199213] error in exec: "/home/pi/webhooks/deploy.sh": stat /home/pi/webhooks/deploy.sh: permission denied
+[webhook] 2025/04/04 15:57:52 [f600cf] incoming HTTP POST request from 140.82.115.193:38606
+[webhook] 2025/04/04 15:57:52 [f600cf] deploy got matched
+[webhook] 2025/04/04 15:57:52 [f600cf] deploy hook triggered successfully
+[webhook] 2025/04/04 15:57:52 [f600cf] 200 | 14 B | 421.63µs | javieraranguren.duckdns.org:9001 | POST /hooks/deploy
+[webhook] 2025/04/04 15:57:52 [f600cf] error in exec: "/home/pi/webhooks/deploy.sh": stat /home/pi/webhooks/deploy.sh: permission denied
+[webhook] 2025/04/04 16:10:23 [d6ed0f] incoming HTTP POST request from 140.82.115.194:37100
+[webhook] 2025/04/04 16:10:23 [d6ed0f] deploy got matched
+[webhook] 2025/04/04 16:10:23 [d6ed0f] deploy hook triggered successfully
+[webhook] 2025/04/04 16:10:23 [d6ed0f] 200 | 14 B | 98.447794ms | javieraranguren.duckdns.org:9001 | POST /hooks/deploy
+[webhook] 2025/04/04 16:10:23 [d6ed0f] error in exec: "/home/pi/webhooks/deploy.sh": stat /home/pi/webhooks/deploy.sh: permission denied
+[webhook] 2025/04/04 16:25:57 [43e6d0] incoming HTTP GET request from 127.0.0.1:48466
+[webhook] 2025/04/04 16:25:57 [43e6d0] deploy got matched
+[webhook] 2025/04/04 16:25:57 [43e6d0] error parsing body payload due to unsupported content type header: 
+[webhook] 2025/04/04 16:25:57 [43e6d0] deploy hook triggered successfully
+[webhook] 2025/04/04 16:25:57 [43e6d0] 200 | 14 B | 92.223µs | localhost:9001 | GET /hooks/deploy
+[webhook] 2025/04/04 16:25:57 [43e6d0] error in exec: "/home/pi/webhooks/deploy.sh": stat /home/pi/webhooks/deploy.sh: permission denied
+[webhook] 2025/04/04 16:27:08 caught terminated signal; exiting
