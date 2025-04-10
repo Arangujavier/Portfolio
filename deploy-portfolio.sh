@@ -6,6 +6,7 @@ if [[ "$1" == "refs/heads/production" ]]; then
 
   git pull origin main
   docker compose down
+  docker-compose up --build -d
   docker compose up -d
 else
   echo "Push a otra rama: $1. No se hace nada."
