@@ -1,0 +1,5 @@
+node_modules/
+.nextcloudsync.log
+.sync_1f1a264c646b.db
+.sync_1f1a264c646b.db-shm
+.sync_1f1a264c646b.db-wal
