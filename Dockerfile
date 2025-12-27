@@ -1,5 +1,5 @@
 # Etapa de construcción
-FROM node:16 AS build
+FROM node:18-alpine AS build
 
 # Establecer directorio de trabajo
 WORKDIR /app
@@ -7,8 +7,8 @@ WORKDIR /app
 # Copiar los archivos package.json y package-lock.json
 COPY package*.json ./
 
-# Instalar dependencias
-RUN npm install
+# Instalar dependencias con --legacy-peer-deps para resolver conflictos
+RUN npm install --legacy-peer-deps
 
 # Copiar el resto del código fuente
 COPY . .
