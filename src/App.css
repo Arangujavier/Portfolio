@@ -42,41 +42,189 @@ main {
    CARD
    ============================================ */
 .hacker-card-outer {
-  padding: 10px;
   height: 100%;
-  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  padding: 3px;
+  background: var(--color-primary);
+  display: flex;
+  clip-path: polygon(
+    0 15px,
+    15px 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    0 100%
+  );
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .hacker-card-outer:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 20px var(--color-secondary);
-}
-
-.hacker-card-outer {
-  background:
-    repeating-linear-gradient(0deg, var(--color-secondary) 0, var(--color-secondary) 20px, transparent 20px, transparent 30px) 0 0 / 4px 100%,
-    repeating-linear-gradient(0deg, var(--color-secondary) 0, var(--color-secondary) 20px, transparent 20px, transparent 30px) 100% 0 / 4px 100%,
-    repeating-linear-gradient(90deg, var(--color-secondary) 0, var(--color-secondary) 20px, transparent 20px, transparent 30px) 0 0 / 100% 4px,
-    repeating-linear-gradient(90deg, var(--color-secondary) 0, var(--color-secondary) 20px, transparent 20px, transparent 30px) 0 100% / 100% 4px;
-  background-repeat: no-repeat;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 30px var(--color-primary), 0 10px 40px rgba(0, 255, 65, 0.3);
+  background: var(--color-secondary);
 }
 
 .hacker-card-inner {
   padding: 1.5rem;
   height: 100%;
+  width: 100%;
   color: var(--text-secondary);
-  background:
-    repeating-linear-gradient(0deg, var(--color-secondary) 0, var(--color-secondary) 20px, transparent 20px, transparent 30px) 0 0 / 4px 100%,
-    repeating-linear-gradient(0deg, var(--color-secondary) 0, var(--color-secondary) 20px, transparent 20px, transparent 30px) 100% 0 / 4px 100%,
-    repeating-linear-gradient(90deg, var(--color-secondary) 0, var(--color-secondary) 20px, transparent 20px, transparent 30px) 0 0 / 100% 4px,
-    repeating-linear-gradient(90deg, var(--color-secondary) 0, var(--color-secondary) 20px, transparent 20px, transparent 30px) 0 100% / 100% 4px;
-  background-repeat: no-repeat;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  clip-path: polygon(
+    0 15px,
+    15px 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    0 100%
+  );
 }
 
 .hacker-card-inner h1 {
-  color: var(--text-primary);
+  color: var(--color-primary);
   font-size: 1.25rem;
   margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hacker-card-inner h1::before {
+  content: '> ';
+  color: var(--color-accent);
+}
+
+/* Card contenedora para agrupar pares */
+.card-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  padding: 3px;
+  background: var(--color-primary);
+  clip-path: polygon(
+    0 15px,
+    15px 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    0 100%
+  );
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.card-group:hover {
+  box-shadow: 0 0 30px var(--color-primary), 0 10px 40px rgba(0, 255, 65, 0.3);
+}
+
+.card-group-inner {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-primary);
+  clip-path: polygon(
+    0 15px,
+    15px 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    0 100%
+  );
+}
+
+.card-group-item {
+  flex: 1;
+  padding: 3px;
+  background: var(--color-secondary);
+  clip-path: polygon(
+    0 10px,
+    10px 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%
+  );
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.card-group-item:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 0 20px var(--color-accent);
+  background: var(--color-accent);
+}
+
+.card-group-item-inner {
+  padding: 1rem;
+  height: 100%;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  clip-path: polygon(
+    0 10px,
+    10px 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%
+  );
+}
+
+.card-group-item-inner h1 {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-group-item-inner h1::before {
+  content: '> ';
+  color: var(--color-accent);
+}
+
+.card-group-item-inner img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: center;
+  flex: 1;
+  border-radius: 2px;
+}
+
+.card-group-item-inner iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  aspect-ratio: 16 / 9;
+  flex: 1;
+  border-radius: 2px;
+  border: none;
+}
+
+/* Card que solo contiene media (sin texto) */
+.card-group-item-inner:has(img):not(:has(h1)),
+.card-group-item-inner:has(iframe):not(:has(h1)) {
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .card-group-inner {
+    flex-direction: column;
+  }
+
+  .card-group-item-inner img {
+    min-height: 250px;
+    max-height: 300px;
+  }
+
+  .card-group-item-inner iframe {
+    min-height: 200px;
+  }
 }
 
 .title {
@@ -85,6 +233,19 @@ main {
   text-align: center;
   margin-bottom: 2rem;
   color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px var(--color-primary);
+}
+
+.title::before {
+  content: '[ ';
+  color: var(--text-muted);
+}
+
+.title::after {
+  content: ' ]';
+  color: var(--text-muted);
 }
 
 .row {
@@ -93,11 +254,12 @@ main {
   width: 100%;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+  align-items: stretch;
 }
 
 .row-col {
   flex: 1;
-  box-sizing: border-box;
+  display: flex;
 }
 
 .row-col a {
@@ -106,21 +268,20 @@ main {
   height: 100%;
 }
 
-.row-col img {
+.row-col img,
+.row-col iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.hacker-card-inner img {
-  max-width: 100%;
-  max-height: 250px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+.hacker-card-inner img,
+.hacker-card-inner iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  margin: 0 auto;
 }
 
 ul {
@@ -137,15 +298,81 @@ ul li {
 
 ul li::before {
   content: '~$ ';
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
-@media (max-width: 768px) {
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+  flex: 1;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  color: var(--color-primary);
+  transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-link svg {
+  width: 100%;
+  height: 100%;
+}
+
+.social-link:hover {
+  color: var(--color-accent);
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 15px var(--color-accent));
+}
+
+/* Project items con iconos */
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+.project-item span {
+  color: var(--text-secondary);
+}
+
+.project-item span::before {
+  content: '~$ ';
+  color: var(--color-accent);
+}
+
+.project-item .social-links {
+  gap: 0.5rem;
+  flex: 0;
+}
+
+.project-item .social-link {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 900px) {
   .row {
     flex-direction: column;
   }
   
   main {
     padding: 1rem;
+  }
+
+  .hacker-card-inner img,
+  .hacker-card-inner iframe {
+    min-height: 200px;
+    height: auto;
   }
 }
